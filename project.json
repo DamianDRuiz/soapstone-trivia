@@ -8,8 +8,10 @@
       "executor": "@nrwl/vite:build",
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
+
       "options": {
-        "outputPath": "dist/soapstone-trivia"
+        "outputPath": "dist/soapstone-trivia",
+        "base": "https://wordpressballer.com/soapstone-trivia"
       },
       "configurations": {
         "development": {
