@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { useImmer } from 'use-immer';
+import AddPlayer from './components/AddPlayer/AddPlayer';
 import Player from './components/Player/Player';
 import Players from './components/Players/Players';
 import Score from './components/Score/Score';
@@ -13,10 +15,10 @@ export function App() {
   const [scoreLeft, setScoreLeft] = useState<number>(0);
   const [scoreRight, setScoreRight] = useState<number>(0);
 
-  const [playersLeft, setPlayersLeft] = useState<Player[]>([
+  const [playersLeft, setPlayersLeft] = useImmer<Player[]>([
     { name: 'SassyNoodle' },
   ]);
-  const [playersRight, setPlayersRight] = useState<Player[]>([
+  const [playersRight, setPlayersRight] = useImmer<Player[]>([
     { name: 'Justini_Tourtellini' },
   ]);
 
@@ -27,12 +29,14 @@ export function App() {
         <Score score={scoreLeft} setScore={setScoreLeft} />
         <hr />
         <Players players={playersLeft} />
+        <AddPlayer setPlayers={setPlayersLeft} />
       </Team>
       <Team>
         <TeamName value={teamRightName} setValue={setTeamRightName} />
         <Score score={scoreRight} setScore={setScoreRight} />
         <hr />
         <Players players={playersRight} />
+        <AddPlayer setPlayers={setPlayersRight} />
       </Team>
     </Trivia>
   );
