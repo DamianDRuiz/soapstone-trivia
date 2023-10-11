@@ -1,0 +1,17 @@
+.ClickToEdit {
+  box-sizing: border-box;
+}
+
+.valueInput {
+  display: none;
+}
+
+.editing {
+  .value {
+    display: none;
+  }
+
+  .valueInput {
+    display: inline-block;
+  }
+}
