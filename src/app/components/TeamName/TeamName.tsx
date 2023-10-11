@@ -1,7 +1,11 @@
 import ClickToEditInput from '../ClickToEditInput/ClickToEditInput';
 
 function TeamName({ value, setValue }: TeamNameProps) {
-  return <ClickToEditInput value={value} setValue={setValue} />;
+  return (
+    <h2>
+      <ClickToEditInput value={value} setValue={setValue} />
+    </h2>
+  );
 }
 
 interface TeamNameProps {

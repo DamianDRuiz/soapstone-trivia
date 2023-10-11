@@ -5,3 +5,12 @@
  * .container {
  * }
 */
+
+.trivia {
+  display: grid;
+  width: 600px;
+  height: 300px;
+  margin: 0 auto;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}

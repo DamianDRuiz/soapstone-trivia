@@ -1,5 +1,7 @@
+import styles from './Team.module.scss';
+
 function Team({ children }: TeamProps) {
-  return <div>{children}</div>;
+  return <div className={styles.team}>{children}</div>;
 }
 
 interface TeamProps {

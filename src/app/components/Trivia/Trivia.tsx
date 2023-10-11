@@ -1,5 +1,6 @@
+import styles from './Trivia.module.scss';
 function Trivia({ children }: TriviaProps) {
-  return <div>{children}</div>;
+  return <div className={styles.trivia}>{children}</div>;
 }
 
 interface TriviaProps {
