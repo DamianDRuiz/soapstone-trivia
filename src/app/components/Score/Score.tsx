@@ -1,12 +1,15 @@
 import { SetStateAction } from 'react';
 import styles from './Score.module.scss';
 
-export function Score({ score, setScore }: ScoreProps) {
+export function Score({ score, setScore, minimal }: ScoreProps) {
   const handleClick = () => setScore((prev) => prev + 1);
 
   return (
-    <div>
-      <span className={styles.score}>Score: {score}</span>
+    <div className={`${minimal ? styles.minimal : ''}`}>
+      <span className={styles.score}>
+        {minimal ? '' : 'Score: '}
+        {score}
+      </span>
       <button className={styles.button} onClick={handleClick}>
         +
       </button>
@@ -17,6 +20,7 @@ export function Score({ score, setScore }: ScoreProps) {
 interface ScoreProps {
   score: number;
   setScore: React.Dispatch<SetStateAction<number>>;
+  minimal: boolean;
 }
 
 export default Score;

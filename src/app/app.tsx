@@ -26,14 +26,14 @@ export function App() {
     <Trivia>
       <Team>
         <TeamName value={teamLeftName} setValue={setTeamLeftName} />
-        <Score score={scoreLeft} setScore={setScoreLeft} />
+        <Score score={scoreLeft} setScore={setScoreLeft} minimal={false} />
         <hr />
         <Players players={playersLeft} />
         <AddPlayer setPlayers={setPlayersLeft} />
       </Team>
       <Team>
         <TeamName value={teamRightName} setValue={setTeamRightName} />
-        <Score score={scoreRight} setScore={setScoreRight} />
+        <Score score={scoreRight} setScore={setScoreRight} minimal={false} />
         <hr />
         <Players players={playersRight} />
         <AddPlayer setPlayers={setPlayersRight} />
