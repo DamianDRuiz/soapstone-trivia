@@ -35,6 +35,7 @@ function ClickToEditInput({ value, setValue }: ClickToEditInputProps) {
             type="text"
             id={`clicktoedit-${value}`}
             onChange={handleValueInputChange}
+            value={valueInput}
           />
         </form>
       </div>
