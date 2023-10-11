@@ -8,15 +8,18 @@ export function App() {
   const [teamLeftName, setTeamLeftName] = useState<string>('Lefty-Lucy');
   const [teamRightName, setTeamRightName] = useState<string>('Righty-Tighty');
 
+  const [scoreLeft, setScoreLeft] = useState<number>(0);
+  const [scoreRight, setScoreRight] = useState<number>(0);
+
   return (
     <Trivia>
       <Team>
         <TeamName value={teamLeftName} setValue={setTeamLeftName} />
-        <Score />
+        <Score score={scoreLeft} setScore={setScoreLeft} />
       </Team>
       <Team>
         <TeamName value={teamRightName} setValue={setTeamRightName} />
-        <Score />
+        <Score score={scoreRight} setScore={setScoreRight} />
       </Team>
     </Trivia>
   );
