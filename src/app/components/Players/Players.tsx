@@ -1,14 +1,14 @@
-import styles from './Players.module.scss';
+import Player from '../Player/Player';
 
-/* eslint-disable-next-line */
-export interface PlayersProps {}
+export function Players({ players }: PlayersProps) {
+  const playerElements = players.map((player, i) => (
+    <Player key={i} name={player.name} />
+  ));
+  return <div>{playerElements}</div>;
+}
 
-export function Players(props: PlayersProps) {
-  return (
-    <div className={styles['container']}>
-      <h1>Welcome to Players!</h1>
-    </div>
-  );
+export interface PlayersProps {
+  players: Player[];
 }
 
 export default Players;

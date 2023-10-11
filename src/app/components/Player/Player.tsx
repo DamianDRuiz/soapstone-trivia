@@ -1,14 +1,13 @@
 import styles from './Player.module.scss';
 
-/* eslint-disable-next-line */
-export interface PlayerProps {}
-
-export function Player(props: PlayerProps) {
-  return (
-    <div className={styles['container']}>
-      <h1>Welcome to Player!</h1>
-    </div>
-  );
+export function Player({ name, score = 0 }: PlayerProps) {
+  return <div className={styles.name}>{name}</div>;
 }
 
+export interface Player {
+  name: string;
+  score?: number;
+}
+
+export interface PlayerProps extends Player {}
 export default Player;
