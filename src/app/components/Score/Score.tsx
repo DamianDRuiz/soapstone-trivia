@@ -1,14 +1,19 @@
-import styles from './Score.module.scss';
+import { SetStateAction } from 'react';
 
-/* eslint-disable-next-line */
-export interface ScoreProps {}
+export function Score({ score, setScore }: ScoreProps) {
+  const handleClick = () => setScore((prev) => prev + 1);
 
-export function Score(props: ScoreProps) {
   return (
-    <div className={styles['container']}>
-      <span>Score: 0</span>
+    <div>
+      <span>Score: {score}</span>
+      <button onClick={handleClick}>+</button>
     </div>
   );
+}
+
+interface ScoreProps {
+  score: number;
+  setScore: React.Dispatch<SetStateAction<number>>;
 }
 
 export default Score;
