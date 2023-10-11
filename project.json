@@ -1,0 +1,72 @@
+{
+  "name": "soapstone-trivia",
+  "$schema": "node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "./src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/soapstone-trivia"
+      },
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production"
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/vite:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "soapstone-trivia:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "soapstone-trivia:build:development",
+          "hmr": true
+        },
+        "production": {
+          "buildTarget": "soapstone-trivia:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "preview": {
+      "executor": "@nrwl/vite:preview-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "soapstone-trivia:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "soapstone-trivia:build:development"
+        },
+        "production": {
+          "buildTarget": "soapstone-trivia:build:production"
+        }
+      }
+    },
+    "test": {
+      "executor": "@nrwl/vite:test",
+      "outputs": ["coverage/soapstone-trivia"],
+      "options": {
+        "passWithNoTests": true,
+        "reportsDirectory": "coverage/soapstone-trivia"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["./src/**/*.{ts,tsx,js,jsx}"]
+      }
+    }
+  },
+  "tags": []
+}
