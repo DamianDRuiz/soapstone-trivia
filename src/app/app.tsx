@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Score from './components/Score/Score';
 import Team from './components/Team/Team';
 import TeamName from './components/TeamName/TeamName';
 import Trivia from './components/Trivia/Trivia';
@@ -11,9 +12,11 @@ export function App() {
     <Trivia>
       <Team>
         <TeamName value={teamLeftName} setValue={setTeamLeftName} />
+        <Score />
       </Team>
       <Team>
         <TeamName value={teamRightName} setValue={setTeamRightName} />
+        <Score />
       </Team>
     </Trivia>
   );
