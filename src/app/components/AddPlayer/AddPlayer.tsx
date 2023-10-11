@@ -13,6 +13,7 @@ export function AddPlayer({ setPlayers }: AddPlayerProps) {
     setPlayers((draft: Player[]) => {
       draft.push({ name: inputValue });
     });
+    setInputValue('');
   };
 
   return (
