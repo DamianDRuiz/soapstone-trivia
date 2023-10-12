@@ -1,2 +1,2 @@
-export const DEFAULT_TEAM_LEFT = [{ name: 'SassyNoodle' }];
-export const DEFAULT_TEAM_RIGHT = [{ name: 'Justini_Tourtellini' }];
+export const DEFAULT_LEFT = [{ name: 'SassyNoodle', score: 0 }];
+export const DEFAULT_RIGHT = [{ name: 'Justini_Tourtellini', score: 0 }];
