@@ -11,7 +11,7 @@ export function AddPlayer({ setPlayers }: AddPlayerProps) {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     setPlayers((draft: Player[]) => {
-      draft.push({ name: inputValue });
+      draft.push({ name: inputValue, score: 0 });
     });
     setInputValue('');
   };
@@ -19,7 +19,12 @@ export function AddPlayer({ setPlayers }: AddPlayerProps) {
   return (
     <div className={styles['container']}>
       <form onSubmit={handleSubmit}>
-        <input type="text" value={inputValue} onChange={handleChange} />
+        <input
+          type="text"
+          value={inputValue}
+          onChange={handleChange}
+          placeholder={'Add a user'}
+        />
       </form>
     </div>
   );
