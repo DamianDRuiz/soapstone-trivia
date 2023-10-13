@@ -24,10 +24,11 @@ export function Player({
 
 export interface Player {
   name: string;
-  score?: number;
+  score: number;
 }
 
 export interface PlayerProps extends Player {
   switchHandler: teamSwitcher;
+  scoreHandler: () => void;
 }
 export default Player;

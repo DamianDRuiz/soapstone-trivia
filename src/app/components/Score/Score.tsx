@@ -1,4 +1,3 @@
-import { SetStateAction } from 'react';
 import styles from './Score.module.scss';
 
 export function Score({ score, setScore, minimal }: ScoreProps) {
@@ -17,7 +16,7 @@ export function Score({ score, setScore, minimal }: ScoreProps) {
 
 interface ScoreProps {
   score: number;
-  setScore: React.Dispatch<SetStateAction<number>>;
+  setScore: any;
   minimal: boolean;
 }
 

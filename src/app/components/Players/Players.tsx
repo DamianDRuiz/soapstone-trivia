@@ -4,8 +4,11 @@ import Player from '../Player/Player';
 export function Players({ players, setPlayers, switchHandler }: PlayersProps) {
   const playerElements = players.map((player, i) => {
     const scoreHandler = () => {
-      setPlayers((draft) => {
-        draft.find((draftObj) => draftObj.name == player.name).score++;
+      setPlayers((draft: Player[]) => {
+        const playerObj: any = draft.find(
+          (draftObj: Player) => draftObj.name == player.name
+        );
+        playerObj.score++;
       });
     };
     return (
@@ -23,6 +26,7 @@ export function Players({ players, setPlayers, switchHandler }: PlayersProps) {
 
 export interface PlayersProps {
   players: Player[];
+  setPlayers: any;
   switchHandler: teamSwitcher;
 }
 
