@@ -1,10 +1,13 @@
-import { useState } from 'react';
 import { teamSwitcher } from 'src/app/hooks/useSwitchTeam/useSwitchTeam';
 import Score from '../Score/Score';
 import styles from './Player.module.scss';
 
-export function Player({ name, switchHandler }: PlayerProps) {
-  const [score, setScore] = useState<number>(0);
+export function Player({
+  name,
+  score,
+  switchHandler,
+  scoreHandler,
+}: PlayerProps) {
   const handleSwitch = () => {
     switchHandler(name);
   };
@@ -14,17 +17,18 @@ export function Player({ name, switchHandler }: PlayerProps) {
       <button className="switchButton" onClick={handleSwitch}>
         &#171;
       </button>
-      {name} (<Score score={score} setScore={setScore} minimal={true} />)
+      {name} (<Score score={score} setScore={scoreHandler} minimal={true} />)
     </div>
   );
 }
 
 export interface Player {
   name: string;
-  score?: number;
+  score: number;
 }
 
 export interface PlayerProps extends Player {
   switchHandler: teamSwitcher;
+  scoreHandler: () => void;
 }
 export default Player;
