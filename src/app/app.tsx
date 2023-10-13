@@ -1,4 +1,4 @@
-import { SetStateAction, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useImmer } from 'use-immer';
 import AddPlayer from './components/AddPlayer/AddPlayer';
 import Player from './components/Player/Player';
@@ -24,20 +24,38 @@ export function App() {
     [playersRight, setPlayersRight]
   );
 
+  useEffect(setSwitchDirections, [playersLeft, playersRight]);
+
   return (
     <Trivia>
       <Team>
         <TeamName value={teamLeftName} setValue={setTeamLeftName} />
-        <Score score={scoreLeft} setScore={setScoreLeft} minimal={false} />
+        <Score
+          score={scoreLeft}
+          setScore={() => setScoreLeft((prev) => prev + 1)}
+          minimal={false}
+        />
         <hr />
-        <Players players={playersLeft} switchHandler={handleSwitchTeamLeft} />
+        <Players
+          players={playersLeft}
+          setPlayers={setPlayersLeft}
+          switchHandler={handleSwitchTeamLeft}
+        />
         <AddPlayer setPlayers={setPlayersLeft} />
       </Team>
       <Team>
         <TeamName value={teamRightName} setValue={setTeamRightName} />
-        <Score score={scoreRight} setScore={setScoreRight} minimal={false} />
+        <Score
+          score={scoreRight}
+          setScore={() => setScoreRight((prev) => prev + 1)}
+          minimal={false}
+        />
         <hr />
-        <Players players={playersRight} switchHandler={handleSwitchTeamRight} />
+        <Players
+          players={playersRight}
+          setPlayers={setPlayersRight}
+          switchHandler={handleSwitchTeamRight}
+        />
         <AddPlayer setPlayers={setPlayersRight} />
       </Team>
     </Trivia>
