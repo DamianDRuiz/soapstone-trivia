@@ -10,6 +10,7 @@ export function AddPlayer({ setPlayers }: AddPlayerProps) {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
+    if (inputValue == '') return;
     setPlayers((draft: Player[]) => {
       draft.push({ name: inputValue, score: 0 });
     });
