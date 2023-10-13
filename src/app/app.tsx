@@ -13,7 +13,7 @@ import useSwitchTeam from './hooks/useSwitchTeam/useSwitchTeam';
 import { setSwitchDirections } from './utils/setSwitchDirections';
 
 export function App() {
-  const [teamLeftName, setTeamLeftName] = useState<string>('Lefty-Lucy');
+  const [teamLeftName, setTeamLeftName] = useState<string>('Lefty-Loosey');
   const [teamRightName, setTeamRightName] = useState<string>('Righty-Tighty');
   const [scoreLeft, setScoreLeft] = useState<number>(0);
   const [scoreRight, setScoreRight] = useState<number>(0);
@@ -42,6 +42,7 @@ export function App() {
             players={playersLeft}
             setPlayers={setPlayersLeft}
             switchHandler={handleSwitchTeamLeft}
+            setTeamScore={setScoreLeft}
           />
           <AddPlayer setPlayers={setPlayersLeft} />
         </Team>
@@ -57,6 +58,7 @@ export function App() {
             players={playersRight}
             setPlayers={setPlayersRight}
             switchHandler={handleSwitchTeamRight}
+            setTeamScore={setScoreRight}
           />
           <AddPlayer setPlayers={setPlayersRight} />
         </Team>

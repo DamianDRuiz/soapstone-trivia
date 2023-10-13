@@ -25,6 +25,11 @@ export function AddPlayer({ setPlayers }: AddPlayerProps) {
           onChange={handleChange}
           placeholder={'Add a user'}
         />
+        <input
+          type="submit"
+          className={`roundButton ${styles.submit}`}
+          value="+"
+        />
       </form>
     </div>
   );

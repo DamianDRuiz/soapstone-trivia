@@ -2,7 +2,7 @@
  * Replace this with your own classes
  *
  * e.g.
- * .container {
+ * .container {s
  * }
 */
 
@@ -11,4 +11,12 @@
   bottom: 20px;
   right: 10px;
   left: 10px;
+
+  input[type='text'] {
+    padding-right: 35px;
+  }
+}
+
+.submit {
+  margin-left: -30px;
 }

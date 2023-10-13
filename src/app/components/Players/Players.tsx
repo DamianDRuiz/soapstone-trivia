@@ -1,7 +1,12 @@
 import { teamSwitcher } from 'src/app/hooks/useSwitchTeam/useSwitchTeam';
 import Player from '../Player/Player';
 
-export function Players({ players, setPlayers, switchHandler }: PlayersProps) {
+export function Players({
+  players,
+  setPlayers,
+  switchHandler,
+  setTeamScore,
+}: PlayersProps) {
   const playerElements = players.map((player, i) => {
     const scoreHandler = () => {
       setPlayers((draft: Player[]) => {
@@ -10,6 +15,7 @@ export function Players({ players, setPlayers, switchHandler }: PlayersProps) {
         );
         playerObj.score++;
       });
+      setTeamScore((prev: number) => prev + 1);
     };
     return (
       <Player
@@ -28,6 +34,7 @@ export interface PlayersProps {
   players: Player[];
   setPlayers: any;
   switchHandler: teamSwitcher;
+  setTeamScore: any;
 }
 
 export default Players;
