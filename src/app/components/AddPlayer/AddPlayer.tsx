@@ -17,7 +17,7 @@ export function AddPlayer({ setPlayers }: AddPlayerProps) {
   };
 
   return (
-    <div className={styles['container']}>
+    <div className={styles.container}>
       <form onSubmit={handleSubmit}>
         <input
           type="text"

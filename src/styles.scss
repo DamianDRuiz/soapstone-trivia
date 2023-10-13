@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+html {
+  background-color: #0c356a;
+}
+
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+}
+
+.roundButton {
+  background-color: #ff8c00;
+  border: 0;
+  border-radius: 100%;
+  font-weight: bold;
+  font-size: 19px;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+input {
+  border: 2px solid transparent;
+  background-color: #0b356a;
+  border-radius: 25px;
+  color: #fff;
+  padding: 10px;
+  &:focus {
+    outline: 0;
+    border-color: #ff8c00;
+  }
+}

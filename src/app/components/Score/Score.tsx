@@ -7,7 +7,7 @@ export function Score({ score, setScore, minimal }: ScoreProps) {
         {minimal ? '' : 'Score: '}
         {score}
       </span>
-      <button className={styles.button} onClick={setScore}>
+      <button className={`${styles.button} roundButton`} onClick={setScore}>
         +
       </button>
     </div>
