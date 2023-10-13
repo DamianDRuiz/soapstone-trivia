@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useImmer } from 'use-immer';
+import styles from './app.module.scss';
 import AddPlayer from './components/AddPlayer/AddPlayer';
 import Player from './components/Player/Player';
 import Players from './components/Players/Players';
@@ -27,38 +28,40 @@ export function App() {
   useEffect(setSwitchDirections, [playersLeft, playersRight]);
 
   return (
-    <Trivia>
-      <Team>
-        <TeamName value={teamLeftName} setValue={setTeamLeftName} />
-        <Score
-          score={scoreLeft}
-          setScore={() => setScoreLeft((prev) => prev + 1)}
-          minimal={false}
-        />
-        <hr />
-        <Players
-          players={playersLeft}
-          setPlayers={setPlayersLeft}
-          switchHandler={handleSwitchTeamLeft}
-        />
-        <AddPlayer setPlayers={setPlayersLeft} />
-      </Team>
-      <Team>
-        <TeamName value={teamRightName} setValue={setTeamRightName} />
-        <Score
-          score={scoreRight}
-          setScore={() => setScoreRight((prev) => prev + 1)}
-          minimal={false}
-        />
-        <hr />
-        <Players
-          players={playersRight}
-          setPlayers={setPlayersRight}
-          switchHandler={handleSwitchTeamRight}
-        />
-        <AddPlayer setPlayers={setPlayersRight} />
-      </Team>
-    </Trivia>
+    <div className={styles.container}>
+      <Trivia>
+        <Team>
+          <TeamName value={teamLeftName} setValue={setTeamLeftName} />
+          <Score
+            score={scoreLeft}
+            setScore={() => setScoreLeft((prev) => prev + 1)}
+            minimal={false}
+          />
+          <hr />
+          <Players
+            players={playersLeft}
+            setPlayers={setPlayersLeft}
+            switchHandler={handleSwitchTeamLeft}
+          />
+          <AddPlayer setPlayers={setPlayersLeft} />
+        </Team>
+        <Team>
+          <TeamName value={teamRightName} setValue={setTeamRightName} />
+          <Score
+            score={scoreRight}
+            setScore={() => setScoreRight((prev) => prev + 1)}
+            minimal={false}
+          />
+          <hr />
+          <Players
+            players={playersRight}
+            setPlayers={setPlayersRight}
+            switchHandler={handleSwitchTeamRight}
+          />
+          <AddPlayer setPlayers={setPlayersRight} />
+        </Team>
+      </Trivia>
+    </div>
   );
 }
 
