@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useImmer } from 'use-immer';
 import styles from './app.module.scss';
 import AddPlayer from './components/AddPlayer/AddPlayer';
+import FuturePlans from './components/FuturePlans/FuturePlans';
 import Player from './components/Player/Player';
 import Players from './components/Players/Players';
 import Score from './components/Score/Score';
@@ -29,6 +30,7 @@ export function App() {
 
   return (
     <div className={styles.container}>
+      <FuturePlans />
       <Trivia>
         <Team>
           <TeamName value={teamLeftName} setValue={setTeamLeftName} />
