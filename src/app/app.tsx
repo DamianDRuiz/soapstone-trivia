@@ -5,6 +5,7 @@ import AddPlayer from './components/AddPlayer/AddPlayer';
 import FuturePlans from './components/FuturePlans/FuturePlans';
 import Player from './components/Player/Player';
 import Players from './components/Players/Players';
+import Question from './components/Question/Question';
 import Score from './components/Score/Score';
 import Team from './components/Team/Team';
 import TeamName from './components/TeamName/TeamName';
@@ -44,6 +45,7 @@ export function App() {
   useEffect(() => {
     setPlayersRight((prev) => prev.sort(compare));
   }, [playersRight]);
+
   return (
     <div className={styles.container}>
       <FuturePlans />
@@ -80,6 +82,7 @@ export function App() {
           />
           <AddPlayer setPlayers={setPlayersRight} />
         </Team>
+        <Question />
       </Trivia>
     </div>
   );
