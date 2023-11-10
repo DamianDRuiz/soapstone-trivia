@@ -28,6 +28,22 @@ export function App() {
 
   useEffect(setSwitchDirections, [playersLeft, playersRight]);
 
+  function compare(a: Player, b: Player) {
+    if (a.score < b.score) {
+      return 1;
+    }
+    if (a.score > b.score) {
+      return -1;
+    }
+    return 0;
+  }
+
+  useEffect(() => {
+    setPlayersLeft((prev) => prev.sort(compare));
+  }, [playersLeft]);
+  useEffect(() => {
+    setPlayersRight((prev) => prev.sort(compare));
+  }, [playersRight]);
   return (
     <div className={styles.container}>
       <FuturePlans />
