@@ -26,7 +26,7 @@ export interface QuestionProps {}
 export function Question(props: QuestionProps) {
   const [categories, setCategories] = useState(null);
   const [options, setOptions] = useState();
-  const [chosenCategory, setChosenCategory] = useState('9');
+  const [chosenCategory, setChosenCategory] = useState(9);
   const [chosenDifficulty, setChosenDifficulty] = useState('easy');
   const [question, setQuestion] = useState('');
 
@@ -86,7 +86,7 @@ export function Question(props: QuestionProps) {
         {question != '' ? question.results[0].question : ''}
       </p>
       <p>
-        <strong>Answer</strong>:{' '}
+        <strong>Answers</strong>:{' '}
         {question != '' ? (
           <>
             <span style={{ color: 'green' }}>
